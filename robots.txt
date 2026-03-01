@@ -1,0 +1,10 @@
+# Klein Wireless Phone Repair - SEO Optimization
+User-agent: *
+Allow: /
+
+# Prevent crawling of common temporary or administrative paths (if any)
+Disallow: /cgi-bin/
+Disallow: /temp/
+
+# Sitemaps (Critical for Local SEO discovery)
+Sitemap: https://irepairall.co/sitemap.xml
