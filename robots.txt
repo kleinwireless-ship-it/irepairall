@@ -1,10 +1,12 @@
 # Klein Wireless Phone Repair - SEO Optimization
+# Transitioned to houstonphonerepair.com - March 2026
+
 User-agent: *
 Allow: /
 
-# Prevent crawling of common temporary or administrative paths (if any)
+# Prevent crawling of common temporary or administrative paths
 Disallow: /cgi-bin/
 Disallow: /temp/
 
-# Sitemaps (Critical for Local SEO discovery)
-Sitemap: https://irepairall.co/sitemap.xml
+# Sitemaps (Updated to the new keyword-rich domain)
+Sitemap: https://houstonphonerepair.com/sitemap.xml

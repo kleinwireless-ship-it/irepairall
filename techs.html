@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Meet Our Expert Techs | Klein Wireless Phone Repair Houston</title>
+    <meta name="description" content="Meet the expert technicians at Klein Wireless Phone Repair. Bilal and Abdul bring precision and speed to cellphone and computer repairs in Houston.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tech-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .tech-card:hover { transform: scale(1.02); }
+        .social-icon { transition: all 0.3s ease; }
+        .social-icon:hover { transform: translateY(-3px); opacity: 0.8; }
+        .tech-gradient { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); }
+        
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center overflow-hidden">
+                    <a href="index.html" title="Klein Wireless Phone Repair - Home" class="flex flex-col">
+                        <span class="text-lg md:text-2xl font-black tracking-tighter text-blue-600 uppercase leading-none">
+                            KLEIN WIRELESS
+                        </span>
+                        <span class="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-[0.2em] leading-none mt-1">
+                            PHONE REPAIR
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-10 font-bold text-slate-600 text-sm uppercase tracking-wider">
+                    <a href="index.html#services" class="hover:text-blue-600 transition relative group">Services</a>
+                    <a href="techs.html" class="text-blue-600 transition relative group">Meet Our Techs</a>
+                    <a href="index.html#local" class="hover:text-blue-600 transition relative group">Location</a>
+                </div>
+
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <a href="tel:8322491111" class="inline-flex items-center px-4 py-2.5 md:px-7 md:py-3.5 border-2 border-blue-600 text-sm md:text-base font-black rounded-2xl shadow-lg shadow-blue-100 text-blue-600 bg-white hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        <span class="hidden sm:inline">832-249-1111</span>
+                        <span class="sm:hidden">Call</span>
+                    </a>
+
+                    <!-- Mobile Toggle Button -->
+                    <button id="menu-toggle" class="lg:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-xl font-black text-blue-600 uppercase">Menu</span>
+                <button id="menu-close" class="p-2 text-slate-600 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="flex flex-col space-y-8">
+                <a href="index.html#services" class="mobile-link text-3xl font-black text-slate-900 uppercase tracking-tighter">Services</a>
+                <a href="techs.html" class="mobile-link text-3xl font-black text-blue-600 uppercase tracking-tighter">Meet Our Techs</a>
+                <a href="index.html#local" class="mobile-link text-3xl font-black text-slate-900 uppercase tracking-tighter">Location</a>
+            </div>
+
+            <div class="mt-auto pb-12">
+                <a href="tel:8322491111" class="flex items-center justify-center w-full py-6 tech-gradient text-white font-black rounded-3xl shadow-2xl uppercase tracking-widest text-sm">
+                    Call 832-249-1111
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-12 pb-24">
+        <!-- Meet The Techs Content -->
+        <section id="team" class="bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Our Team</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">The Faces Behind the Tech</h1>
+                    <p class="text-slate-600 max-w-2xl mx-auto text-lg font-medium">At <strong>Klein Wireless Phone Repair</strong>, we don't just fix devices—we build relationships. Meet the experts who handle your tech with care.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Tech 1: Bilal -->
+                    <div class="tech-card bg-slate-50 p-10 rounded-[3.5rem] shadow-2xl shadow-blue-100 border border-slate-100 flex flex-col items-center text-center">
+                        <div class="relative mb-8">
+                            <div class="absolute inset-0 bg-blue-100 rounded-full scale-110 -rotate-6"></div>
+                            <img src="Bilal.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bilal&background=2563eb&color=fff&size=256'" width="256" height="256" decoding="async" loading="lazy" alt="Bilal fixing an iPhone screen at Klein Wireless Phone Repair Houston" class="relative w-56 h-56 rounded-full object-cover border-4 border-white shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="absolute bottom-2 right-2 bg-blue-600 text-white p-4 rounded-full shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl font-black text-slate-900 mb-2">Bilal</h3>
+                        <p class="text-blue-600 font-bold text-sm uppercase tracking-widest mb-6">CS Specialist & Foodie</p>
+                        <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                            <p>Currently crushing <strong>Computer Science at Lamar University</strong>, Bilal brings logic-driven precision to every repair. When he isn't debugging code or logic boards, he’s probably hunting for the best eats in Houston.</p>
+                            <p class="bg-blue-100/50 p-4 rounded-2xl italic font-medium text-slate-700">"Be warned: He's incredibly great with repairs, but even better at chatting your ear off!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Tech 2: Abdul -->
+                    <div class="tech-card bg-slate-50 p-10 rounded-[3.5rem] shadow-2xl shadow-amber-100 border border-slate-100 flex flex-col items-center text-center">
+                        <div class="relative mb-8">
+                            <div class="absolute inset-0 bg-amber-100 rounded-full scale-110 rotate-6"></div>
+                            <img src="Abdul.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Abdul&background=f59e0b&color=fff&size=256'" width="256" height="256" decoding="async" loading="lazy" alt="Abdul providing expert cellphone repair near Beltway 8 Houston" class="relative w-56 h-56 rounded-full object-cover border-4 border-white shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="absolute bottom-2 right-2 bg-amber-500 text-white p-4 rounded-full shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl font-black text-slate-900 mb-2">Abdul (The Big Boss)</h3>
+                        <p class="text-amber-600 font-bold text-sm uppercase tracking-widest mb-6">The Founding Legend</p>
+                        <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                            <p>The man who started it all at the <strong>Greenspoint</strong> store. Abdul is a speed demon—officially the fastest technician in Houston. He’s a family man with 4 kids and a beard that has its own zip code.</p>
+                            <p class="bg-amber-100/50 p-4 rounded-2xl italic font-medium text-slate-700">"He speaks surprisingly fluent Spanish and is always ready with a joke while he fixes your phone in record time."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-24 pb-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12">
+                <span class="text-xl font-black tracking-tighter text-blue-600 uppercase leading-none block mb-4">
+                    KLEIN WIRELESS<br>PHONE REPAIR
+                </span>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium max-w-md mx-auto">
+                    Houston's trusted repair center for smartphones and computers since 2008.
+                </p>
+            </div>
+            <div class="pt-12 text-center text-slate-300 text-[10px] font-black uppercase tracking-[0.5em] border-t border-slate-50">
+                <p>&copy; 2026 Klein Wireless Phone Repair - Houston</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile CTA (Sticky) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-slate-100 z-50">
+        <a href="tel:8322491111" class="flex items-center justify-center w-full py-5 tech-gradient text-white font-black rounded-2xl shadow-2xl uppercase tracking-widest text-xs">
+            Call Now: 832-249-1111
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
