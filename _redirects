@@ -1,6 +1,11 @@
-Permanent 301 Redirect from old domain to new domain
+# Domain Migration: irepairall.co to houstonphonerepair.com
+# 301! ensures a forced redirect even if old files exist
 
-This covers both http and https automatically
+http://irepairall.co/* https://houstonphonerepair.com/:splat  301!
+https://irepairall.co/* https://houstonphonerepair.com/:splat  301!
+http://www.irepairall.co/* https://houstonphonerepair.com/:splat  301!
+https://www.irepairall.co/* https://houstonphonerepair.com/:splat  301!
 
-irepairall.co/* https://houstonphonerepair.com/:splat  301!
-www.irepairall.co/* https://houstonphonerepair.com/:splat  301!
+# Redirect any subpages that might not have a direct match 
+# to the new homepage as a fallback (Optional but recommended)
+/old-page-name  /new-page-name  301
