@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="I5hH8mxRqzS8mXQ4uSm44Rw_IB4gEQfSUQF" />
+    <meta name="google-site-verification" content="XxDEEW1krgfSM4YyXAyHye49FJRizBc6Vfk5D" />
 
     <!-- BRAND LOGO FOR GOOGLE SEARCH (Favicon Tags) -->
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
     <link rel="shortcut icon" href="/logo.png">
+
+    <!-- BEGIN MerchantWidget Code -->
+<script id='merchantWidgetScript'
+        src="https://www.gstatic.com/shopping/merchant/merchantwidget.js"
+        defer>
+</script>
+<script type="text/javascript">
+  merchantWidgetScript.addEventListener('load', function () {
+    merchantwidget.start({
+    position: 'LEFT_BOTTOM'
+  });
+  });
+</script>
+
+<script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+
+<script>
+  merchantWidgetScript.addEventListener('load', function () {
+    merchantwidget.start({
+         // REQUIRED FIELDS
+         merchant_id: 5742320213,
+
+         // OPTIONAL FIELDS
+         position: POSITION,
+         region: REGION,
+    });
+  });
+</script>
+
+<!-- END MerchantWidget Code →
 
     <!-- Resource Hints for PageSpeed -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">

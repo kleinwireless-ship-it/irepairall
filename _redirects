@@ -1,0 +1,6 @@
+Permanent 301 Redirect from old domain to new domain
+
+This covers both http and https automatically
+
+irepairall.co/* https://houstonphonerepair.com/:splat  301!
+www.irepairall.co/* https://houstonphonerepair.com/:splat  301!
