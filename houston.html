@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Our Local Houston Store | Klein Wireless Phone Repair</title>
+    
+    <meta name="description" content="Visit Klein Wireless Phone Repair at our physical Houston storefront inside FoodTown. Local expert repair for the community since 2008.">
+    <link rel="canonical" href="https://houstonphonerepair.com/local-store.html">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CRITICAL CSS: Fixes LCP and prevents Layout Shifts -->
+    <style>
+        body { visibility: hidden; opacity: 0; }
+        body.loaded { visibility: visible; opacity: 1; transition: opacity 0.2s ease-in; }
+        .hero-min-height { min-height: 400px; }
+        .store-gradient { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); }
+        .map-container { aspect-ratio: 16/9; width: 100%; border-radius: 2rem; overflow: hidden; background: #f1f5f9; }
+    </style>
+
+    <!-- Local Business Schema (CRITICAL for Google Verification) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobilePhoneRepair",
+      "name": "Klein Wireless Phone Repair",
+      "image": "https://houstonphonerepair.com/Abdul.jpeg",
+      "@id": "https://houstonphonerepair.com",
+      "url": "https://houstonphonerepair.com",
+      "telephone": "+18322491111",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2770 North Sam Houston Pkwy W Suite 1504",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "postalCode": "77038",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "19:00"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- Simple Navigation -->
+    <nav class="h-20 flex items-center bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+            <a href="/" class="flex flex-col">
+                <span class="text-xl font-black text-blue-600 uppercase">KLEIN WIRELESS</span>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">LOCAL STOREFRONT</span>
+            </a>
+            <a href="tel:8322491111" class="px-5 py-2.5 bg-blue-600 text-white font-bold rounded-xl text-sm">Call 832-249-1111</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Physical Location Hero -->
+        <section class="py-16 lg:py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 lg:grid lg:grid-cols-2 gap-12 items-center hero-min-height">
+                <div>
+                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-widest text-blue-700 uppercase bg-blue-100 rounded-full">Your Local Neighborhood Shop</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
+                        Visit Our Physical <span class="text-blue-600">Houston Store</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                        We are a <strong>local, brick-and-mortar business</strong> located inside <strong>FoodTown</strong>. Come see us in person for face-to-face assistance with your devices.
+                    </p>
+                    
+                    <!-- Core Info Block -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                        <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2">Store Address</p>
+                            <p class="font-bold text-slate-900">2770 N Sam Houston Pkwy W<br>Suite 1504, Houston, TX 77038</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-2">Current Status</p>
+                            <p id="store-status" class="font-bold text-slate-900">Loading hours...</p>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/jfm1cNtZSyXXtoDT8" target="_blank" class="inline-block px-10 py-5 store-gradient text-white font-black rounded-2xl shadow-xl hover:scale-[1.02] transition-transform uppercase tracking-widest text-sm">
+                        Get Instant Directions
+                    </a>
+                </div>
+
+                <!-- Visual Store Proof -->
+                <div class="mt-12 lg:mt-0 relative">
+                    <div class="map-container shadow-2xl border-4 border-white">
+                        <iframe id="hero-map" src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.357264698599!2d-95.46092379999999!3d29.94040069999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c93b8b08bd61%3A0x8a3b11cf70ca4aeb!2sKlein%20Wireless%20Phone%20Repair!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating Hours Table (Clear Visibility) -->
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-black mb-10 uppercase tracking-tight">Store Hours of Operation</h2>
+                <div class="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 overflow-hidden border border-slate-100">
+                    <ul class="space-y-4 text-lg font-medium">
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Monday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Tuesday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Wednesday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Thursday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Friday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between pb-4 border-b border-slate-200"><span>Saturday</span> <span class="font-black">10:00 AM – 8:00 PM</span></li>
+                        <li class="flex justify-between text-blue-600 font-black"><span>Sunday</span> <span>12:00 PM – 7:00 PM</span></li>
+                    </ul>
+                </div>
+                <p class="mt-8 text-slate-500 font-medium italic text-sm">Walk-ins are always welcome. No appointment necessary.</p>
+            </div>
+        </section>
+
+        <!-- Local Presence Section -->
+        <section class="py-20 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-black mb-12 uppercase">Community Storefront Since 2008</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-slate-800 rounded-3xl">
+                        <h3 class="text-blue-400 font-black text-xl mb-4">Inside FoodTown</h3>
+                        <p class="text-slate-400">Conveniently located within the FoodTown shopping center on North Sam Houston Pkwy W.</p>
+                    </div>
+                    <div class="p-8 bg-slate-800 rounded-3xl">
+                        <h3 class="text-blue-400 font-black text-xl mb-4">Houston Owned</h3>
+                        <p class="text-slate-400">Locally owned and operated business serving the Klein and Spring communities for over 18 years.</p>
+                    </div>
+                    <div class="p-8 bg-slate-800 rounded-3xl">
+                        <h3 class="text-blue-400 font-black text-xl mb-4">Physical Inventory</h3>
+                        <p class="text-slate-400">We stock hundreds of physical replacement parts in-store to provide immediate local assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 bg-white border-t border-slate-100 text-center">
+        <p class="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">© 2026 Klein Wireless Phone Repair - Physical Storefront</p>
+    </footer>
+
+    <!-- DELAYED SCRIPTS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function updateStoreStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sun, 1 = Mon...
+            const hour = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hour12: false }).format(now));
+            const statusEl = document.getElementById('store-status');
+            
+            let isOpen = false;
+            if (day === 0) { // Sunday
+                if (hour >= 12 && hour < 19) isOpen = true;
+            } else { // Mon-Sat
+                if (hour >= 10 && hour < 20) isOpen = true;
+            }
+
+            if (isOpen) {
+                statusEl.innerHTML = '<span class="text-green-600">● Open Now</span> until ' + (day === 0 ? '7PM' : '8PM');
+            } else {
+                statusEl.innerHTML = '<span class="text-red-600">● Currently Closed</span> Opens ' + (day === 6 ? '12PM' : '10AM');
+            }
+        }
+
+        window.onload = () => {
+            document.body.classList.add('loaded');
+            updateStoreStatus();
+            
+            // Lazy load map
+            setTimeout(() => {
+                const map = document.getElementById('hero-map');
+                map.src = map.getAttribute('data-src');
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
