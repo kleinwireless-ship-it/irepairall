@@ -13,22 +13,25 @@
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="shortcut icon" href="/logo.png">
 
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="stylesheet" href="style.css">
 
     <style>
-        body { visibility: hidden; opacity: 0; }
-        body.loaded { visibility: visible; opacity: 1; transition: opacity 0.2s ease-in; }
-        /* Define Hero Title size immediately for LCP measurement */
-        .hero-title-container { min-height: 120px; }
-        /* Accordion & Menu Utility */
+        body { visibility: hidden; }
+        body.loaded { visibility: visible; }
+        .hero-title { font-size: 2.75rem; font-weight: 900; line-height: 1.1; color: #0f172a; }
+        @media (min-width: 768px) { .hero-title { font-size: 4.5rem; } }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-content.active { max-height: 1000px; }
-        #mobile-menu { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
-        #mobile-menu.active { transform: translateX(0); }
-        .whatsapp-gradient { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
-        .outline-text { -webkit-text-stroke: 1px #0f172a; color: transparent; }
+        .accordion-content.active { max-height: 2000px; }
+        #mobile-menu.active { display: block; }
     </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0K0LPMGTX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y0K0LPMGTX');
+    </script>
 
     <script type="application/ld+json">
     {
@@ -69,15 +72,12 @@
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
                 </a>
                 <a href="tel:8322491111" class="hidden lg:inline-flex px-6 py-3 border-2 border-blue-600 text-blue-600 font-black rounded-2xl shadow-lg hover:bg-blue-600 hover:text-white transition-all">832-249-1111</a>
-                
-                <button id="menu-toggle" class="lg:hidden p-2 text-slate-600 focus:outline-none" aria-label="Toggle Menu">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+                <button id="menu-toggle" class="lg:hidden p-2 text-slate-600 focus:outline-none"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
             </div>
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white lg:hidden">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white lg:hidden hidden">
         <div class="p-8">
             <div class="flex justify-between items-center mb-12">
                 <span class="text-xl font-black text-blue-600 uppercase">Navigation</span>
@@ -92,11 +92,11 @@
     </div>
 
     <main>
-        <section class="bg-slate-50 pt-16 pb-24 overflow-hidden relative">
+        <section class="bg-slate-50 pt-16 pb-24 relative">
             <div class="max-w-7xl mx-auto px-4 lg:grid lg:grid-cols-2 gap-16 items-center">
-                <div class="hero-title-container">
+                <div>
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-blue-700 uppercase bg-blue-100 rounded-full">Serving Houston Since 2008</span>
-                    <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-tight mb-8">
+                    <h1 class="hero-title">
                         <span class="text-blue-600 italic block">15-Minute</span> <strong>Expert Cellphone Repair</strong>
                     </h1>
                     <p class="text-xl text-slate-600 mb-8 leading-relaxed">
@@ -107,8 +107,8 @@
                 <div id="quote" class="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100">
                     <div class="flex items-center justify-between mb-8">
                         <h3 class="text-2xl font-black text-slate-900 tracking-tight uppercase">Instant Quote</h3>
-                        <div id="live-indicator" class="hidden items-center space-x-2">
-                            <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <div id="live-indicator" class="flex items-center space-x-2">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                             <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Live Specialist</span>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                             <option value="Battery replacement">Battery Service</option>
                             <option value="Charging Port">Charging Port Fix</option>
                         </select>
-                        <button type="button" onclick="sendToWhatsApp()" class="w-full py-5 whatsapp-gradient text-white font-black rounded-2xl shadow-xl uppercase tracking-widest text-sm">
+                        <button type="button" onclick="sendToWhatsApp()" class="w-full py-5 bg-green-500 text-white font-black rounded-2xl shadow-xl uppercase tracking-widest text-sm hover:bg-green-600 transition">
                             CHAT NOW ON WHATSAPP
                         </button>
                     </form>
@@ -133,9 +133,7 @@
 
         <section id="services" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 text-center">
-                <h2 class="text-5xl md:text-8xl font-black text-slate-900 mb-20 uppercase italic leading-none">
-                    We Fix <span class="outline-text">Everything</span>
-                </h2>
+                <h2 class="text-5xl md:text-8xl font-black text-slate-900 mb-20 uppercase italic leading-none">We Fix <span class="text-blue-600">Everything</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="p-10 bg-slate-50 rounded-[2.5rem] border-2 border-transparent hover:border-blue-600 transition-all">
                         <h3 class="text-2xl font-black mb-4 uppercase">iPhone Repair</h3>
@@ -174,39 +172,10 @@
                             <div class="text-slate-600 leading-loose space-y-4 pb-6">
                                 <p>Finding <strong>Expert Cellphone Repair in Houston</strong> shouldn't be a struggle. Since 2008, <strong>Klein Wireless Phone Repair</strong> has been the gold standard for North Houston residents. Our technicians combine decades of hands-on experience with modern diagnostic equipment to fix everything from the oldest models to the latest flagship devices. We serve <strong>Klein</strong>, <strong>Spring</strong>, <strong>Greenspoint</strong>, and <strong>Aldine</strong> with a commitment to technical precision and customer satisfaction.</p>
                                 <p>Our location, situated inside <strong>FoodTown</strong> near <strong>Beltway 8 and Veterans Memorial Dr</strong>, is perfectly positioned for rapid service. We specialize in <strong>15-minute iPhone screen repair</strong> and complex <strong>Samsung</strong> hardware restoration. We use only the highest quality replacement parts, ensuring that your <strong>phone repair</strong> doesn't just look good but lasts for years. By focusing on local community needs, we have built a 5-star reputation among thousands of satisfied neighbors.</p>
-                                <p>We understand that each device tells a story, and a broken screen or a malfunctioning battery can disrupt your entire routine. That is why our shop is fully equipped with state-of-the-art microscopic soldering stations and the latest diagnostic software. We don't just replace parts; we restore your connection to the world. Our deep knowledge of circuit board architecture allows us to perform data recovery and logic board repairs that many other shops simply turn away.</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
-                        <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
-                            <span class="uppercase tracking-tight">Professional Computer & Laptop Support</span>
-                            <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content px-8">
-                            <div class="text-slate-600 leading-loose space-y-4 pb-6">
-                                <p>Beyond mobile phones, we are Houston's premier <strong>Computer repair</strong> experts. Whether you have a <strong>MacBook</strong> that won't charge or a Windows laptop plagued by viruses, our <strong>North Houston</strong> shop provides full-scale hardware and software solutions. We specialize in <strong>SSD upgrades</strong>, <strong>RAM installations</strong>, and <strong>laptop screen repair</strong>. Our mission is to keep your professional and personal tools running at peak performance without the massive cost of buying new equipment.</p>
-                                <p>We understand the complexities of modern computing, from thermal management to operating system optimization. When you visit us at <strong>Beltway 8</strong>, you aren't just getting a quick fix; you're getting an expert evaluation. We provide <strong>Google Pixel</strong> and <strong>iPad</strong> services as well, ensuring that all your portable technology is covered under one roof. Our legacy of excellence in <strong>Houston computer repair</strong> is why we remain the top-rated local shop in the 77038 area.</p>
-                                <p>In the digital age, your computer is your office, your school, and your creative studio. A slow or failing machine can mean lost productivity or missed deadlines. Our technical team treats every computer repair with the urgency it deserves. We offer comprehensive virus cleanup, malware removal, and preventative maintenance packages to ensure your hardware stays protected against future threats. From custom PC builds to intricate MacBook liquid damage repair, our versatility is our strength.</p>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
-                        <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
-                            <span class="uppercase tracking-tight">Why Fast Turnaround Matters for You</span>
-                            <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content px-8">
-                            <div class="text-slate-600 leading-loose space-y-4 pb-6">
-                                <p>In today's fast-paced world, being without a device for a day is not an option. That is why <strong>Klein Wireless</strong> prioritizes 15-minute <strong>phone fixes</strong> for most common issues. While other <strong>Houston phone repair</strong> shops make you wait for days, we carry a massive inventory of parts on-site. This includes battery replacements for <strong>iPhone</strong> and <strong>Samsung</strong>, as well as <strong>charging port repairs</strong> for nearly all brands.</p>
-                                <p>Our commitment to speed doesn't mean we sacrifice quality. Every <strong>Expert Cellphone Repair in Houston</strong> performed by our team is double-checked for functionality before it leaves our shop. We are proud to be the neighborhood's first choice for tech support, serving the <strong>Klein ISD</strong> community and beyond. Trust the local experts who value your time and your technology.</p>
-                                <p>Transparency is the cornerstone of our business model. When you bring a device to us, we provide a clear, upfront diagnostic and a fair estimate. There are no hidden fees or surprise costs. We believe that by providing honest service at a competitive price, we earn more than just a transaction—we earn your trust. This philosophy has allowed us to serve the Houston community for over 18 years, growing from a single small location to a regional leader in specialized electronics repair.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -216,20 +185,16 @@
                     <div>
                         <h2 class="text-4xl md:text-5xl font-black mb-8 tracking-tight">Our Houston Location</h2>
                         <p class="text-lg text-slate-300 mb-10 leading-relaxed">Find <strong>Klein Wireless Phone Repair</strong> inside <strong>FoodTown</strong> at Beltway 8 and Veterans Memorial Dr.</p>
-                        
                         <div class="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-400 font-bold uppercase tracking-widest">
                             <div class="flex items-center"><span class="text-blue-500 mr-2 text-xl">📍</span> Inside FoodTown (Beltway 8)</div>
                             <div class="flex items-center"><span class="text-blue-500 mr-2 text-xl">📍</span> Near Veterans Memorial Dr</div>
                             <div class="flex items-center"><span class="text-blue-500 mr-2 text-xl">📍</span> Serving North Houston & Klein</div>
                             <div class="flex items-center"><span class="text-blue-500 mr-2 text-xl">📍</span> Minutes from Klein ISD</div>
                         </div>
-
-                        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm">
-                            Get Directions
-                        </a>
+                        <a href="https://maps.app.goo.gl/YourActualLinkID" target="_blank" class="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm">Get Directions</a>
                     </div>
                     <div class="mt-12 lg:mt-0 rounded-[3rem] overflow-hidden shadow-2xl h-[450px] border border-slate-700">
-                        <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.1147575233157!2d-95.441050!3d29.914280!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cb9725f778db%3A0x6291689252c4238e!2sKlein%20Wireless%20Phone%20Repair!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="lazy-iframe"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -239,39 +204,27 @@
             <div class="max-w-7xl mx-auto px-4">
                 <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-8">Service Area Authority</h4>
                 <div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-xs font-bold text-slate-500 uppercase tracking-widest">
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Klein</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">North Houston</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Spring</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Tomball</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Humble</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Greenspoint</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Cypresswood</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Beltway 8</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Veterans Memorial Dr</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">Louetta</a>
-                    <a href="index.html#local" class="hover:text-blue-600 transition">FM 1960 Road</a>
+                    <a href="#local" class="hover:text-blue-600 transition">Klein</a>
+                    <a href="#local" class="hover:text-blue-600 transition">North Houston</a>
+                    <a href="#local" class="hover:text-blue-600 transition">Spring</a>
+                    <a href="#local" class="hover:text-blue-600 transition">Tomball</a>
+                    <a href="#local" class="hover:text-blue-600 transition">Humble</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="bg-white pt-24 pb-12 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
                 <div>
                     <span class="text-xl font-black text-blue-600 uppercase leading-none block mb-6">KLEIN WIRELESS<br>PHONE REPAIR</span>
-                    <p class="mt-6 text-slate-500 text-sm leading-relaxed font-medium">
-                        Houston's trusted repair center for smartphones and computers since 2008. Reliable solutions at <strong>Klein Wireless Phone Repair</strong>.
-                    </p>
+                    <p class="mt-6 text-slate-500 text-sm leading-relaxed font-medium">Houston's trusted repair center since 2008. Reliable solutions at Klein Wireless Phone Repair.</p>
                 </div>
                 <div>
                     <h4 class="font-black text-slate-900 mb-6 uppercase text-xs tracking-[0.3em]">Business Contact</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed font-medium mb-4">
-                        2770 North Sam Houston Pkwy W Suite 1504<br>
-                        Houston, TX 77038<br>
-                        <a href="tel:8322491111" class="text-blue-600 font-bold hover:underline">832-249-1111</a>
-                    </p>
-                    <div class="flex space-x-6 justify-center md:justify-start mt-6">
+                    <p class="text-slate-600 text-sm mb-4">2770 North Sam Houston Pkwy W Suite 1504<br>Houston, TX 77038<br><a href="tel:8322491111" class="text-blue-600 font-bold">832-249-1111</a></p>
+                    <div class="flex space-x-6 font-bold text-xs uppercase tracking-widest">
                         <a href="https://www.youtube.com/@kleinwireless.phonerepair" target="_blank" class="text-slate-400 hover:text-red-600 transition">YouTube</a>
                         <a href="https://www.linkedin.com/company/klein-wireless-phone-repair/" target="_blank" class="text-slate-400 hover:text-blue-700 transition">LinkedIn</a>
                         <a href="https://www.instagram.com/kleinwireless.phonerepair" target="_blank" class="text-slate-400 hover:text-pink-600 transition">Instagram</a>
@@ -280,8 +233,8 @@
                 <div>
                     <h4 class="font-black text-slate-900 mb-6 uppercase text-xs tracking-[0.3em]">Repair Hours</h4>
                     <ul class="text-slate-600 text-sm space-y-2 font-medium">
-                        <li class="flex justify-between max-w-[200px] mx-auto md:mx-0"><span>Mon – Sat:</span> <span class="font-black text-slate-900">10AM – 8PM</span></li>
-                        <li class="flex justify-between max-w-[200px] mx-auto md:mx-0 text-blue-700 font-black"><span>Sunday:</span> <span>12PM – 7PM</span></li>
+                        <li class="flex justify-between"><span>Mon – Sat:</span> <span class="font-black text-slate-900">10AM – 8PM</span></li>
+                        <li class="flex justify-between text-blue-700 font-black"><span>Sunday:</span> <span>12PM – 7PM</span></li>
                     </ul>
                 </div>
             </div>
@@ -289,69 +242,32 @@
         </div>
     </footer>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
     <script>
-        setTimeout(() => {
-            const gtagScript = document.createElement('script');
-            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-Y0K0LPMGTX";
-            gtagScript.async = true;
-            document.head.appendChild(gtagScript);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Y0K0LPMGTX');
-
-            const merchantScript = document.createElement('script');
-            merchantScript.src = "https://www.gstatic.com/shopping/merchant/merchantwidget.js";
-            merchantScript.defer = true;
-            merchantScript.onload = () => {
-                if (window.merchantwidget) {
-                    merchantwidget.start({ merchant_id: 5742320213, position: 'LEFT_BOTTOM' });
-                }
-            };
-            document.head.appendChild(merchantScript);
-            
-            // Lazy load the iframe
-            document.querySelectorAll('.lazy-iframe').forEach(iframe => {
-                iframe.src = iframe.getAttribute('data-src');
-            });
-        }, 2000);
-
-        function checkLiveStatus() {
-            const now = new Date();
-            const hour = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hour12: false }).format(now));
-            const indicator = document.getElementById('live-indicator');
-            if (indicator && hour >= 9 && hour < 21) { indicator.style.display = 'flex'; } 
-            else if(indicator) { indicator.style.display = 'none'; }
-        }
-
         function toggleAccordion(btn) {
             btn.classList.toggle('active');
             btn.nextElementSibling.classList.toggle('active');
-            const svg = btn.querySelector('svg');
-            if(svg) svg.classList.toggle('rotate-180');
+            btn.querySelector('svg').classList.toggle('rotate-180');
         }
 
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('active');
+        function toggleMenu() { 
+            mobileMenu.classList.toggle('hidden');
             document.body.classList.toggle('overflow-hidden');
         }
 
-        if(menuToggle) menuToggle.addEventListener('click', toggleMenu);
-        if(menuClose) menuClose.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+        if(menuToggle) menuToggle.onclick = toggleMenu;
+        if(menuClose) menuClose.onclick = toggleMenu;
 
         window.onload = () => {
-            checkLiveStatus();
             document.body.classList.add('loaded');
-            setInterval(checkLiveStatus, 60000);
+            if (window.merchantwidget) {
+              merchantwidget.start({ merchant_id: 5742320213, position: 'LEFT_BOTTOM' });
+            }
         };
 
         function sendToWhatsApp() {
