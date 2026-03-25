@@ -13,24 +13,22 @@
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="shortcut icon" href="/logo.png">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
 
-    <script id='merchantWidgetScript' src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
-    <script>
-      window.addEventListener('load', function () {
-        if (window.merchantwidget) {
-          merchantwidget.start({ merchant_id: 5742320213, position: 'LEFT_BOTTOM' });
-        }
-      });
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0K0LPMGTX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y0K0LPMGTX');
-    </script>
+    <style>
+        body { visibility: hidden; opacity: 0; }
+        body.loaded { visibility: visible; opacity: 1; transition: opacity 0.2s ease-in; }
+        /* Define Hero Title size immediately for LCP measurement */
+        .hero-title-container { min-height: 120px; }
+        /* Accordion & Menu Utility */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-content.active { max-height: 1000px; }
+        #mobile-menu { transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+        #mobile-menu.active { transform: translateX(0); }
+        .whatsapp-gradient { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .outline-text { -webkit-text-stroke: 1px #0f172a; color: transparent; }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -96,7 +94,7 @@
     <main>
         <section class="bg-slate-50 pt-16 pb-24 overflow-hidden relative">
             <div class="max-w-7xl mx-auto px-4 lg:grid lg:grid-cols-2 gap-16 items-center">
-                <div>
+                <div class="hero-title-container">
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-blue-700 uppercase bg-blue-100 rounded-full">Serving Houston Since 2008</span>
                     <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-tight mb-8">
                         <span class="text-blue-600 italic block">15-Minute</span> <strong>Expert Cellphone Repair</strong>
@@ -110,7 +108,7 @@
                     <div class="flex items-center justify-between mb-8">
                         <h3 class="text-2xl font-black text-slate-900 tracking-tight uppercase">Instant Quote</h3>
                         <div id="live-indicator" class="hidden items-center space-x-2">
-                            <span class="pulse-dot"></span>
+                            <span class="pulse-dot w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                             <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Live Specialist</span>
                         </div>
                     </div>
@@ -166,12 +164,11 @@
         <section class="py-24 bg-slate-50 border-t border-slate-100">
             <div class="max-w-4xl mx-auto px-6">
                 <h2 class="text-3xl font-black text-center mb-10 uppercase tracking-tight">Houston's Local Tech Authority Insights</h2>
-                
                 <div class="space-y-6">
                     <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
                         <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
                             <span class="uppercase tracking-tight">The Art of Expert Cellphone Repair Houston</span>
-                            <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content px-8">
                             <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -185,7 +182,7 @@
                     <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
                         <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
                             <span class="uppercase tracking-tight">Professional Computer & Laptop Support</span>
-                            <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content px-8">
                             <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -199,7 +196,7 @@
                     <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
                         <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
                             <span class="uppercase tracking-tight">Why Fast Turnaround Matters for You</span>
-                            <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div class="accordion-content px-8">
                             <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -227,12 +224,12 @@
                             <div class="flex items-center"><span class="text-blue-500 mr-2 text-xl">📍</span> Minutes from Klein ISD</div>
                         </div>
 
-                        <a href="https://maps.app.goo.gl/jfm1cNtZSyXXtoDT8" target="_blank" class="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm">
+                        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition shadow-2xl uppercase tracking-widest text-sm">
                             Get Directions
                         </a>
                     </div>
                     <div class="mt-12 lg:mt-0 rounded-[3rem] overflow-hidden shadow-2xl h-[450px] border border-slate-700">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3457.357264698599!2d-95.46092379999999!3d29.94040069999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c93b8b08bd61%3A0x8a3b11cf70ca4aeb!2sKlein%20Wireless%20Phone%20Repair!5e0!3m2!1sen!2sca!4v1774277678765!5m2!1sen!2sca" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="about:blank" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.1147575233157!2d-95.441050!3d29.914280!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640cb9725f778db%3A0x6291689252c4238e!2sKlein%20Wireless%20Phone%20Repair!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="lazy-iframe"></iframe>
                     </div>
                 </div>
             </div>
@@ -292,19 +289,49 @@
         </div>
     </footer>
 
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
+        setTimeout(() => {
+            const gtagScript = document.createElement('script');
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-Y0K0LPMGTX";
+            gtagScript.async = true;
+            document.head.appendChild(gtagScript);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y0K0LPMGTX');
+
+            const merchantScript = document.createElement('script');
+            merchantScript.src = "https://www.gstatic.com/shopping/merchant/merchantwidget.js";
+            merchantScript.defer = true;
+            merchantScript.onload = () => {
+                if (window.merchantwidget) {
+                    merchantwidget.start({ merchant_id: 5742320213, position: 'LEFT_BOTTOM' });
+                }
+            };
+            document.head.appendChild(merchantScript);
+            
+            // Lazy load the iframe
+            document.querySelectorAll('.lazy-iframe').forEach(iframe => {
+                iframe.src = iframe.getAttribute('data-src');
+            });
+        }, 2000);
+
         function checkLiveStatus() {
             const now = new Date();
             const hour = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: 'numeric', hour12: false }).format(now));
             const indicator = document.getElementById('live-indicator');
-            if (hour >= 9 && hour < 21) { indicator.style.display = 'flex'; } 
-            else { indicator.style.display = 'none'; }
+            if (indicator && hour >= 9 && hour < 21) { indicator.style.display = 'flex'; } 
+            else if(indicator) { indicator.style.display = 'none'; }
         }
 
         function toggleAccordion(btn) {
             btn.classList.toggle('active');
             btn.nextElementSibling.classList.toggle('active');
+            const svg = btn.querySelector('svg');
+            if(svg) svg.classList.toggle('rotate-180');
         }
 
         const menuToggle = document.getElementById('menu-toggle');
