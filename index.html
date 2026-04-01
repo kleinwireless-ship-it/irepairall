@@ -17,15 +17,6 @@
 <link rel="preload" as="style" href="style.css">
 <link rel="stylesheet" href="style.css">
 
-<script>
-  window.tailwind = {
-    config: {
-      corePlugins: {
-        preflight: false
-      }
-    }
-  };
-</script>
 
 <script type="application/ld+json">
 
@@ -71,27 +62,35 @@
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden">
 
-<nav class="sticky top-0 z-50 border-b border-slate-100/60 h-20 flex items-center bg-white/80 backdrop-blur-xl">
+<nav class="sticky top-0 z-50 border-b border-slate-100 h-20 flex items-center bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-        <a href="/" class="flex flex-col group">
+        <a href="index.html" class="flex flex-col">
             <span class="text-xl md:text-2xl font-black tracking-tighter text-blue-600 uppercase">KLEIN WIRELESS</span>
-            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">PHONE REPAIR</span>
+            <span class="text-[15px] font-bold text-red-600 uppercase tracking-[0.12em]">HOUSTON PHONE REPAIR</span>
         </a>
-        
+
         <div class="hidden lg:flex items-center space-x-10 font-bold text-slate-600 text-sm uppercase">
-            <a href="#services" class="hover:text-blue-600 transition">Services</a>
+            <a href="index.html#services" class="hover:text-blue-600 transition">Services</a>
+            <a href="iphone-repair-houston.html" class="hover:text-blue-600 transition">iPhone Repair</a>
             <a href="techs.html" class="hover:text-blue-600 transition">Meet Our Techs</a>
-            <a href="#local" class="hover:text-blue-600 transition">Location</a>
+            <a href="index.html#local" class="hover:text-blue-600 transition">Location</a>
         </div>
 
         <div class="flex items-center space-x-3 md:space-x-4">
-            <a href="tel:8322491111" class="lg:hidden p-3 bg-blue-600 text-white rounded-2xl shadow-lg flex items-center justify-center">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+            <a href="tel:8322491111" class="lg:hidden p-3 bg-blue-600 text-white rounded-2xl shadow-lg flex items-center justify-center" aria-label="Call Klein Wireless Phone Repair">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
             </a>
-            <a href="tel:8322491111" class="hidden lg:inline-flex px-6 py-3 border-2 border-blue-600 text-blue-600 font-black rounded-2xl shadow-lg hover:bg-blue-600 hover:text-white transition-all">832-249-1111</a>
-            
+
+            <a href="tel:8322491111" class="hidden lg:inline-flex px-6 py-3 border-2 border-blue-600 text-blue-600 font-black rounded-2xl shadow-lg hover:bg-blue-600 hover:text-white transition-all">
+                832-249-1111
+            </a>
+
             <button id="menu-toggle" class="lg:hidden p-2 text-slate-600 focus:outline-none" aria-label="Toggle Menu">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
         </div>
     </div>
@@ -101,12 +100,18 @@
     <div class="p-8">
         <div class="flex justify-between items-center mb-12">
             <span class="text-xl font-black text-blue-600 uppercase">Navigation</span>
-            <button id="menu-close" class="p-2 text-slate-600"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <button id="menu-close" class="p-2 text-slate-600" aria-label="Close Menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
+
         <div class="flex flex-col space-y-8">
-            <a href="#services" class="mobile-link text-3xl font-black text-slate-900 uppercase">Services</a>
+            <a href="index.html#services" class="mobile-link text-3xl font-black text-slate-900 uppercase">Services</a>
+            <a href="iphone-repair-houston.html" class="mobile-link text-3xl font-black text-slate-900 uppercase">iPhone Repair</a>
             <a href="techs.html" class="mobile-link text-3xl font-black text-slate-900 uppercase">Meet Our Techs</a>
-            <a href="#local" class="mobile-link text-3xl font-black text-slate-900 uppercase">Location</a>
+            <a href="index.html#local" class="mobile-link text-3xl font-black text-slate-900 uppercase">Location</a>
         </div>
     </div>
 </div>
@@ -124,30 +129,33 @@
                 </p>
             </div>
 
-            <div id="quote" class="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100">
-                <div class="flex items-center justify-between mb-8">
-                    <h3 class="text-2xl font-black text-slate-900 tracking-tight uppercase">Instant Quote</h3>
-                    <div id="live-indicator" class="hidden items-center space-x-2">
-                        <span class="pulse-dot"></span>
-                        <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Live Specialist</span>
-                    </div>
-                </div>
-                <form class="space-y-5">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <input type="text" id="name" placeholder="Full Name" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
-                        <input type="text" id="device" placeholder="Device Model" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
-                    </div>
-                    <select id="issueType" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
-                        <option value="">Select Service Needed</option>
-                        <option value="Screen Repair">Screen Repair (All Brands)</option>
-                        <option value="Battery replacement">Battery Service</option>
-                        <option value="Charging Port">Charging Port Fix</option>
-                    </select>
-                    <button type="button" onclick="sendToWhatsApp()" class="w-full py-5 whatsapp-gradient text-white font-black rounded-2xl shadow-xl uppercase tracking-widest text-sm">
-                        CHAT NOW ON WHATSAPP
-                    </button>
-                </form>
-            </div>
+           <div id="quote" class="bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-100 quote-card">
+    <div class="flex items-center justify-between mb-8 quote-card-header">
+        <h3 class="text-2xl font-black text-slate-900 tracking-tight uppercase">Instant Quote</h3>
+        <div id="live-indicator" class="hidden items-center space-x-2 live-indicator">
+            <span class="pulse-dot"></span>
+            <span class="text-green-600 text-[10px] font-black uppercase tracking-widest">Live Specialist</span>
+        </div>
+    </div>
+
+    <form class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" id="name" placeholder="Full Name" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
+            <input type="text" id="device" placeholder="Device Model" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
+        </div>
+
+        <select id="issueType" required class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 outline-none">
+            <option value="">Select Service Needed</option>
+            <option value="Screen Repair">Screen Repair (All Brands)</option>
+            <option value="Battery replacement">Battery Service</option>
+            <option value="Charging Port">Charging Port Fix</option>
+        </select>
+
+        <button type="button" onclick="sendToWhatsApp()" class="w-full py-5 whatsapp-gradient text-white font-black rounded-2xl uppercase tracking-widest text-sm quote-submit">
+            CHAT NOW ON WHATSAPP
+        </button>
+    </form>
+</div>
         </div>
     </section>
 
@@ -189,7 +197,9 @@
                 <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
                     <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
                         <span class="uppercase tracking-tight">The Art of Expert Cellphone Repair Houston</span>
-                        <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+</svg>
                     </button>
                     <div class="accordion-content px-8">
                         <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -203,7 +213,9 @@
                 <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
                     <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
                         <span class="uppercase tracking-tight">Professional Computer & Laptop Support</span>
-                        <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+</svg>
                     </button>
                     <div class="accordion-content px-8">
                         <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -215,9 +227,11 @@
                 </div>
 
                 <div class="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm">
-                    <button class="w-full p-8 text-left font-black flex justify-between items-center group" onclick="toggleAccordion(this)">
+                    <button class="w-full p-8 text-left font-black flex justify-between items-center" onclick="toggleAccordion(this)">
                         <span class="uppercase tracking-tight">Why Fast Turnaround Matters for You</span>
-                        <svg class="w-6 h-6 transition-transform duration-300 group-[.active]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+</svg>
                     </button>
                     <div class="accordion-content px-8">
                         <div class="text-slate-600 leading-loose space-y-4 pb-6">
@@ -280,7 +294,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 text-center md:text-left">
             <div>
-                <span class="text-xl font-black text-blue-600 uppercase leading-none block mb-6">KLEIN WIRELESS<br>PHONE REPAIR</span>
+                <span class="text-xl font-black text-blue-600 uppercase leading-none block mb-6">
+  KLEIN WIRELESS<br>
+  <span class="text-red-600">HOUSTON PHONE REPAIR</span>
+</span>
                 <p class="mt-6 text-slate-500 text-sm leading-relaxed font-medium">
                     Houston's trusted repair center for smartphones and computers since 2008. Reliable solutions at <strong>Klein Wireless Phone Repair</strong>.
                 </p>
@@ -310,7 +327,6 @@
     </div>
 </footer>
 
-<script src="https://cdn.tailwindcss.com" defer></script>
 <script>
     function checkLiveStatus() {
         const now = new Date();
@@ -383,8 +399,8 @@
         document.body.classList.add('loaded');
         setInterval(checkLiveStatus, 60000);
 
-        setTimeout(loadMerchantWidget, 1500);
-        setTimeout(loadGoogleAnalytics, 2000);
+        setTimeout(loadMerchantWidget, 5000);
+        setTimeout(loadGoogleAnalytics, 5000);
     });
 </script>
 
